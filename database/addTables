@@ -1,0 +1,44 @@
+CREATE TABLE IF NOT EXISTS public.users
+(
+    id_user integer NOT NULL GENERATED ALWAYS AS IDENTITY ( INCREMENT 1 START 1 MINVALUE 1 MAXVALUE 2147483647 CACHE 1 ),
+    cnpj character varying(100) COLLATE pg_catalog."default",
+    name character varying(100) COLLATE pg_catalog."default",
+    email character varying COLLATE pg_catalog."default",
+    password character varying COLLATE pg_catalog."default",
+    phone character varying(20) COLLATE pg_catalog."default",
+    contact_email character varying(100) COLLATE pg_catalog."default",
+    address character varying(100) COLLATE pg_catalog."default",
+    register_date date,
+    profile_picture character varying COLLATE pg_catalog."default",
+    city character varying COLLATE pg_catalog."default",
+    CONSTRAINT users_pkey PRIMARY KEY (id_user)
+)
+
+
+CREATE TABLE IF NOT EXISTS public.oportunities
+(
+    type_oportunity integer,
+    expiration_date date,
+    quantity integer,
+    salary_min double precision,
+    salary_max double precision,
+    hour_min time without time zone,
+    hour_max time without time zone,
+    id_oportunity integer NOT NULL GENERATED ALWAYS AS IDENTITY ( INCREMENT 1 START 1 MINVALUE 1 MAXVALUE 2147483647 CACHE 1 ),
+    title character varying(100) COLLATE pg_catalog."default",
+    description character varying(1000) COLLATE pg_catalog."default",
+    requeriments_description character varying(500) COLLATE pg_catalog."default",
+    benefits_description character varying(200) COLLATE pg_catalog."default",
+    contact_phone character varying(20) COLLATE pg_catalog."default",
+    contact_email character varying(100) COLLATE pg_catalog."default",
+    address character varying(100) COLLATE pg_catalog."default",
+    id_user_fk integer,
+    register_date date,
+    is_remote boolean,
+    expertise_level integer,
+    city character varying(30) COLLATE pg_catalog."default",
+    CONSTRAINT fk_user FOREIGN KEY (id_user_fk)
+        REFERENCES public.users (id_user) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+)

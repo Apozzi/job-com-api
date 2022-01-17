@@ -1,0 +1,18 @@
+package enums
+
+var (
+	TYPE_FIRST_SALARY_RANGE  = 1
+	TYPE_SECOND_SALARY_RANGE = 2
+	TYPE_THIRD_SALARY_RANGE  = 3
+	TYPE_FOURTH_SALARY_RANGE = 4
+	TYPE_LAST_SALARY_RANGE   = 5
+)
+
+var (
+	FIRST_SALARY_RANGE  = [2]float32{0, 800}
+	SECOND_SALARY_RANGE = [2]float32{1000, 2000}
+	THIRD_SALARY_RANGE  = [2]float32{2000, 3000}
+	FOURTH_SALARY_RANGE = [2]float32{3000, 3500}
+	LAST_SALARY_RANGE   = [2]float32{3500, -1}
+	// Número negativo representa infinito
+)
