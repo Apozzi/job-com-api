@@ -17,7 +17,7 @@ func main() {
 	controllers.Initialize(config.Connect(), jwtAuth)
 	router := gin.Default()
 	routers.Routers(router)
-	godotenv.Load(".env")
+	godotenv.Load()
 	port := os.Getenv("PORT")
 	router.Run(":" + port)
 }
