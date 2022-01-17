@@ -15,5 +15,5 @@ func main() {
 	controllers.Initialize(config.Connect(), jwtAuth)
 	router := gin.Default()
 	routers.Routers(router)
-	router.Run(":8080")
+	router.Run()
 }
