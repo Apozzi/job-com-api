@@ -14,11 +14,14 @@ func goDotEnvVariable(key string) string {
 
 // Connecting to db
 func Connect() *gorm.DB {
-	dsn := "host=" + goDotEnvVariable("POSTGRE_HOST") +
-		" user=" + goDotEnvVariable("POSTGRE_USER") +
-		" password=" + goDotEnvVariable("POSTGRE_PASSWORD") +
-		" dbname=" + goDotEnvVariable("POSTGRE_DBNAME") +
-		" port=" + goDotEnvVariable("POSTGRE_PORT") + " sslmode=disable"
+	dsn := goDotEnvVariable("DATABASE_URL")
+	if dsn == "" {
+		dsn = "host=" + goDotEnvVariable("POSTGRE_HOST") +
+			" user=" + goDotEnvVariable("POSTGRE_USER") +
+			" password=" + goDotEnvVariable("POSTGRE_PASSWORD") +
+			" dbname=" + goDotEnvVariable("POSTGRE_DBNAME") +
+			" port=" + goDotEnvVariable("POSTGRE_PORT") + " sslmode=disable"
+	}
 
 	db, err := gorm.Open(postgres.Open(dsn), &gorm.Config{})
 	if err != nil {
