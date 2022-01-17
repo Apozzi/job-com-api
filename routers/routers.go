@@ -2,6 +2,7 @@ package routers
 
 import (
 	controllers "job-com-api/controllers"
+	"net/http"
 
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
@@ -15,6 +16,9 @@ func Routers(router *gin.Engine) {
 		ExposeHeaders:    []string{"Content-Length"},
 		AllowCredentials: true,
 	}))
+	router.GET("/", func(c *gin.Context) {
+		c.String(http.StatusOK, "Version 1")
+	})
 	router.POST("login", controllers.Login)
 	router.GET("oportunity/paginated", controllers.GetOportunitiesPaginated)
 	router.GET("oportunity/:id", controllers.GetOportunity)
