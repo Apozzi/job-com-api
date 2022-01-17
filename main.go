@@ -1,10 +1,10 @@
 package main
 
 import (
-	auth "job-com-backend/authentication"
-	config "job-com-backend/config"
-	controllers "job-com-backend/controllers"
-	routers "job-com-backend/routers"
+	auth "job-com-api/authentication"
+	config "job-com-api/config"
+	controllers "job-com-api/controllers"
+	routers "job-com-api/routers"
 
 	"github.com/gin-gonic/gin"
 )

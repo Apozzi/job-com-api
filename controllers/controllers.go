@@ -1,7 +1,7 @@
 package controllers
 
 import (
-	authentication "job-com-backend/authentication"
+	authentication "job-com-api/authentication"
 	"math"
 	"net/http"
 	"strings"

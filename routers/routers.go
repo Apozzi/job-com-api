@@ -1,7 +1,7 @@
 package routers
 
 import (
-	controllers "job-com-backend/controllers"
+	controllers "job-com-api/controllers"
 
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"

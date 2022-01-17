@@ -6,7 +6,7 @@ import (
 	"strings"
 	"time"
 
-	enums "job-com-backend/enums"
+	enums "job-com-api/enums"
 
 	"github.com/gin-gonic/gin"
 	"gorm.io/gorm"

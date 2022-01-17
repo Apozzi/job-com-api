@@ -1,4 +1,4 @@
-module job-com-backend
+module job-com-api
 
 // +heroku goVersion go1.17
 go 1.17
