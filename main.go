@@ -12,12 +12,12 @@ import (
 )
 
 func main() {
+	godotenv.Load()
 	var secretKey string = "8a9b4555-664d-4afd-8598-a8d57fe6ab7d"
 	jwtAuth, _ := auth.NewJWTTokenMaker(secretKey)
 	controllers.Initialize(config.Connect(), jwtAuth)
 	router := gin.Default()
 	routers.Routers(router)
-	godotenv.Load()
 	port := os.Getenv("PORT")
 	router.Run(":" + port)
 }
