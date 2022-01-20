@@ -1,4 +1,4 @@
-# job-com API Backend
+# Job-com API Backend
 API feita em golang utilizando frameworks Gin e o a ORM do Gorm.
 
 Essa API é a do website Jobs.com! 
