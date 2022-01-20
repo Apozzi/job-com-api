@@ -14,3 +14,21 @@ Pagina dos Anunciantes:
 Aqui está parte do frontend relativa a geolocalização utilizando a API do Bing.
 
 [![FJZf81-TXo-Acb-QTB.jpg](https://i.postimg.cc/RFhxM6s0/FJZf81-TXo-Acb-QTB.jpg)](https://postimg.cc/wtCG2vdK)
+
+## Como rodar?
+O backend roda utilizando Go 1.17.
+Primeiramente é necessária instalação das dependencias na pasta do projeto.
+```
+go install
+```
+Após isso basta utilizar seguinte comando para rodar o backend:
+```
+go run main.go
+```
+
+### Deploy 
+```
+go deploy
+```
+ 
+
